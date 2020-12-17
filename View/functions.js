@@ -63,7 +63,7 @@ function checkForMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
   if (isMatch == true){
       matchedCards.push('salma');
-      if (matchedCards.length == 1){
+      if (matchedCards.length == 6){
        let chrono = document.getElementById('compteur').textContent;
        chrono = parseInt(chrono);
 
