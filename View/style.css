@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+  }
+  
+  body {
+    height: 100vh;
+    background-color: rgb(252, 245, 245);
+    /* display: flex;
+    background: #060AB2; */
+  }
+  hr{
+    margin-left: 38%;
+  }
+
+  div#start a{
+    color: rgb(145, 103, 103);
+  }
+
+  #compteur{
+    text-align: center;
+    font-size: 25px;
+    line-height: 3.5;
+  }
+  .memory-game {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+  }
+  
+  .memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  }
+  
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+  
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background:rgba(255, 165, 0, 0.3);
+    backface-visibility: hidden;
+  }
+  
+  .front-face {
+    transform: rotateY(180deg);
+  }
+
+  .overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  .overlay-text-small {
+    font-size: .3em;
+  }
+  
+  .overlay-text.visible {
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+  }
+  @keyframes overlay-grow {
+    from {
+      background-color: rgba(252,248,245, 0.3);;
+      font-size: 0;
+    }
+    to {
+      background-color: rgba(177,163,151, 0.6);;
+      font-size: 7em;
+    }
+  }
